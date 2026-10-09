@@ -369,9 +369,9 @@ body.loaded { opacity: 1; }
    ADAPTACIÓN A TABLET Y CELULAR
    ========================================================== */
 @media (max-width: 1024px) {
-  .header { height: auto; min-height: 72px; padding: 8px 16px; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 12px; overflow: visible; }
-  .logo { order: 1; width: auto; text-align: left; }
-  .logo img { height: 60px; top: 0; transform: none; margin: 0; }
+  .header { height: 78px; min-height: 0; padding: 0 16px; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 12px; overflow: visible; }
+  .logo { order: 1; width: auto; text-align: left; flex-shrink: 0; height: 78px; overflow: hidden; display: flex; align-items: center; }
+  .logo img { height: 212px; flex-shrink: 0; top: 15px; transform: none; margin: 0; }
   .contacto-header { order: 2; margin: 0 0 0 auto; padding-left: 0; border-left: none; }
   .whatsapp-header { width: 44px; height: 44px; }
   .menu-toggle { order: 3; display: flex; }
@@ -468,7 +468,9 @@ body.loaded { opacity: 1; }
 }
 
 @media (max-width: 480px) {
-  .header { padding: 8px 12px; }
+  .header { height: 70px; padding: 0 10px; gap: 8px; }
+  .logo { height: 70px; }
+  .logo img { height: 190px; top: 13px; }
   .info-contacto { display: none; }
   .clientes-grid { grid-template-columns: repeat(2, 1fr); }
 }
