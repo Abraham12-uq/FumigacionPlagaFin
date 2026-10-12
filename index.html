@@ -173,6 +173,17 @@ body.loaded { opacity: 1; }
 .card-servicio:hover::before { left: 100%; }
 .card-servicio:hover img { transform: scale(1.1) rotate(3deg); filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6)); }
 
+/* Botón "Más información" en cada servicio */
+.btn-info {
+  position: relative; z-index: 2; display: inline-block; margin-top: 14px;
+  padding: 11px 22px; border-radius: 50px; background: #1e7d3a; color: #fff;
+  font-family: 'Poppins', Arial, sans-serif; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-info:hover { background: #2a9d4e; transform: translateY(-2px); }
+
 /* ===== SIMULADOR ===== */
 .seccion.simulador { background: #f6f8fa; padding: 80px 20px; }
 .simulador-kicker { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #00488f; margin-bottom: 8px; }
@@ -236,7 +247,8 @@ body.loaded { opacity: 1; }
 .anuncio { background: white; padding: 25px; border-radius: 16px; box-shadow: 0px 8px 25px rgba(0,0,0,0.15); transition: 0.3s; }
 .anuncio:hover { transform: translateY(-5px); box-shadow: 0px 8px 20px rgba(0,0,0,0.2); }
 .anuncio img { width: 100%; height: auto; max-height: 450px; object-fit: contain; }
-.anuncio-video, .anuncio-video2 { position: relative; overflow: hidden; height: 450px; border-radius: 12px; }
+.anuncio-media { position: relative; overflow: hidden; height: 400px; border-radius: 12px; }
+.anuncio .btn-info { margin-top: 18px; }
 .anuncio-video img, .anuncio-video video, .anuncio-video2 img, .anuncio-video2 video {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: none; object-fit: contain;
   background: #fff; border-radius: 12px; opacity: 0; transition: opacity 1s ease;
@@ -438,7 +450,7 @@ body.loaded { opacity: 1; }
   .anuncio { padding: 12px; border-radius: 14px; }
   .anuncio:hover { transform: none; }
   .anuncio img { max-height: 300px; }
-  .anuncio-video, .anuncio-video2 { height: 340px; }
+  .anuncio-media { height: 300px; }
 
   .faq-question { padding: 16px 14px; gap: 12px; font-size: 15px; }
   .faq-numero { width: 26px; height: 26px; font-size: 12px; }
@@ -465,6 +477,7 @@ body.loaded { opacity: 1; }
   .card-servicio h3 { grid-area: titulo; margin: 0; font-size: 16px; align-self: end; }
   .card-servicio p { grid-area: texto; margin: 0; font-size: 13.5px; line-height: 1.5; align-self: start; }
   .card-servicio img { grid-area: img; width: 92px; height: 92px; max-width: none; margin: 0; }
+  .btn-info { grid-area: boton; justify-self: start; margin-top: 8px; padding: 9px 18px; font-size: 12px; }
 }
 
 @media (max-width: 480px) {
@@ -849,35 +862,64 @@ body.loaded { opacity: 1; }
 
     <div class="anuncio">
       <img loading="lazy" src="Anuncio1.png" alt="Anuncio 1">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%201%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
     </div>
 
     <div class="anuncio anuncio-video2">
-      <img loading="lazy" src="Anuncio2.png" class="img-anuncio2 activa" alt="Anuncio 2">
-      <video preload="metadata" class="video-anuncio2" muted playsinline>
-        <source src="Anuncio2.mp4" type="video/mp4">
-      </video>
+      <div class="anuncio-media">
+        <img loading="lazy" src="Anuncio2.png" class="img-anuncio2 activa" alt="Anuncio 2">
+        <video preload="metadata" class="video-anuncio2" muted playsinline>
+          <source src="Anuncio2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%202%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
     </div>
 
     <div class="anuncio">
       <img loading="lazy" src="Anuncio3.png" alt="Anuncio 3">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%203%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
     </div>
 
     <div class="anuncio">
       <img loading="lazy" src="Anuncio4.png" alt="Anuncio 4">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%204%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
     </div>
 
     <div class="anuncio anuncio-video">
-      <img loading="lazy" src="Anuncio5.png" class="img-anuncio activa" alt="Anuncio 5">
-      <video preload="metadata" class="video-anuncio" muted playsinline>
-        <source src="Anuncio5.mp4" type="video/mp4">
-      </video>
+      <div class="anuncio-media">
+        <img loading="lazy" src="Anuncio5.png" class="img-anuncio activa" alt="Anuncio 5">
+        <video preload="metadata" class="video-anuncio" muted playsinline>
+          <source src="Anuncio5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%205%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
     </div>
 
     <div class="anuncio">
       <img loading="lazy" src="Anuncio6.png" alt="Anuncio 6">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20vi%20el%20anuncio%206%20en%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n.">Más información</a>
+    </div>
+
+    <div class="anuncio">
+      <img loading="lazy" src="TREX.jpg" alt="Trampa para roedores T-REX">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20trampa%20para%20roedores%20T-REX.">Más información</a>
+    </div>
+
+    <div class="anuncio">
+      <img loading="lazy" src="MIRILLA.jpg" alt="Trampa mecánica sin químicos">
+      <a class="btn-info" target="_blank" rel="noopener"
+         href="https://wa.me/526623180219?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20trampa%20mec%C3%A1nica%20sin%20qu%C3%ADmicos.">Más información</a>
     </div>
 
   </div>
+
 </div>
 
 <!-- FAQ -->
